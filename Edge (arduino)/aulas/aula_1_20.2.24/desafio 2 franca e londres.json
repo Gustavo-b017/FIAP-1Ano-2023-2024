@@ -1,0 +1,1084 @@
+[
+    {
+        "id": "7eac7a62884c6ebc",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "519f495d21c3c3a8",
+        "type": "inject",
+        "z": "7eac7a62884c6ebc",
+        "name": "paris",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 70,
+        "y": 40,
+        "wires": [
+            [
+                "101d187c6bfbc0db"
+            ]
+        ]
+    },
+    {
+        "id": "95270f74ca3f72cb",
+        "type": "debug",
+        "z": "7eac7a62884c6ebc",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "a5c6beb6b8f0dd31",
+        "type": "debug",
+        "z": "7eac7a62884c6ebc",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "33d9031a9a0f3352",
+        "type": "debug",
+        "z": "7eac7a62884c6ebc",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "395930e40e649410",
+        "type": "debug",
+        "z": "7eac7a62884c6ebc",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "13b44e572fc71e23",
+        "type": "debug",
+        "z": "7eac7a62884c6ebc",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "81e4c016971afa7b",
+        "type": "debug",
+        "z": "7eac7a62884c6ebc",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "101d187c6bfbc0db",
+        "type": "http request",
+        "z": "7eac7a62884c6ebc",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.openweathermap.org/data/2.5/weather?lat=48.8534&lon=2.3488&appid=a669c7581a465a7a7c6ca5cea61e378f&units=metric",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 210,
+        "y": 120,
+        "wires": [
+            [
+                "17b87533c2dc5b82"
+            ]
+        ]
+    },
+    {
+        "id": "17b87533c2dc5b82",
+        "type": "json",
+        "z": "7eac7a62884c6ebc",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 330,
+        "y": 220,
+        "wires": [
+            [
+                "541f13f604da659d",
+                "a96737847678e86b",
+                "ba93e6f934aa7d20",
+                "3db8c9d2ea863f63",
+                "455de797a17d2d0b",
+                "4655afdf6e1c0142"
+            ]
+        ]
+    },
+    {
+        "id": "1b777764aecf8d42",
+        "type": "ui_gauge",
+        "z": "7eac7a62884c6ebc",
+        "name": "",
+        "group": "76cc29dc05233609",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Paris - tempo atual",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 710,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "ab76ad9925225e89",
+        "type": "ui_gauge",
+        "z": "7eac7a62884c6ebc",
+        "name": "",
+        "group": "76cc29dc05233609",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Paris - tempo minimo",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 720,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "1d34a292c8a671db",
+        "type": "ui_gauge",
+        "z": "7eac7a62884c6ebc",
+        "name": "",
+        "group": "76cc29dc05233609",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Paris - tempo maximo",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 720,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "46ce05719b565749",
+        "type": "ui_gauge",
+        "z": "7eac7a62884c6ebc",
+        "name": "",
+        "group": "f483b048b6e9fd27",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Paris - valocidade do vento",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 740,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "39ce417455bac624",
+        "type": "ui_gauge",
+        "z": "7eac7a62884c6ebc",
+        "name": "",
+        "group": "f483b048b6e9fd27",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Paris - humidade",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 710,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "8984ec91224ef015",
+        "type": "ui_gauge",
+        "z": "7eac7a62884c6ebc",
+        "name": "",
+        "group": "f483b048b6e9fd27",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Paris - sencacao termica",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 730,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "541f13f604da659d",
+        "type": "change",
+        "z": "7eac7a62884c6ebc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.temp",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 60,
+        "wires": [
+            [
+                "95270f74ca3f72cb",
+                "1b777764aecf8d42"
+            ]
+        ]
+    },
+    {
+        "id": "a96737847678e86b",
+        "type": "change",
+        "z": "7eac7a62884c6ebc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.temp_min",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 140,
+        "wires": [
+            [
+                "a5c6beb6b8f0dd31",
+                "ab76ad9925225e89"
+            ]
+        ]
+    },
+    {
+        "id": "ba93e6f934aa7d20",
+        "type": "change",
+        "z": "7eac7a62884c6ebc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.temp_max",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 220,
+        "wires": [
+            [
+                "33d9031a9a0f3352",
+                "1d34a292c8a671db"
+            ]
+        ]
+    },
+    {
+        "id": "3db8c9d2ea863f63",
+        "type": "change",
+        "z": "7eac7a62884c6ebc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.wind.speed",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 300,
+        "wires": [
+            [
+                "395930e40e649410",
+                "46ce05719b565749"
+            ]
+        ]
+    },
+    {
+        "id": "455de797a17d2d0b",
+        "type": "change",
+        "z": "7eac7a62884c6ebc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.humidity",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 380,
+        "wires": [
+            [
+                "13b44e572fc71e23",
+                "39ce417455bac624"
+            ]
+        ]
+    },
+    {
+        "id": "4655afdf6e1c0142",
+        "type": "change",
+        "z": "7eac7a62884c6ebc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.feels_like",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 460,
+        "wires": [
+            [
+                "81e4c016971afa7b",
+                "8984ec91224ef015"
+            ]
+        ]
+    },
+    {
+        "id": "ed8cdc4d51be3729",
+        "type": "inject",
+        "z": "7eac7a62884c6ebc",
+        "name": "londres",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 70,
+        "y": 600,
+        "wires": [
+            [
+                "f259141c094f1008"
+            ]
+        ]
+    },
+    {
+        "id": "87a179b49cb4a7ce",
+        "type": "debug",
+        "z": "7eac7a62884c6ebc",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "2a54ebe93e0f945b",
+        "type": "debug",
+        "z": "7eac7a62884c6ebc",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "54768e53c3b4ae33",
+        "type": "debug",
+        "z": "7eac7a62884c6ebc",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "3c072d82678eb708",
+        "type": "debug",
+        "z": "7eac7a62884c6ebc",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "57687db3bb2c94a0",
+        "type": "debug",
+        "z": "7eac7a62884c6ebc",
+        "name": "debug 11",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "d81d9422efd434be",
+        "type": "debug",
+        "z": "7eac7a62884c6ebc",
+        "name": "debug 12",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "f259141c094f1008",
+        "type": "http request",
+        "z": "7eac7a62884c6ebc",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.openweathermap.org/data/2.5/weather?lat=51.5085&lon=-0.1257&appid=a669c7581a465a7a7c6ca5cea61e378f&units=metric",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 210,
+        "y": 680,
+        "wires": [
+            [
+                "82bf7e1b42d18427"
+            ]
+        ]
+    },
+    {
+        "id": "82bf7e1b42d18427",
+        "type": "json",
+        "z": "7eac7a62884c6ebc",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 330,
+        "y": 780,
+        "wires": [
+            [
+                "7333dd2d94045dcd",
+                "3b35263da4183d7e",
+                "78c7d38facc4e585",
+                "14f18eb9f78ab996",
+                "87265b8f2d7ea372",
+                "fa9828e8b157290b"
+            ]
+        ]
+    },
+    {
+        "id": "c25d92e7a03ee021",
+        "type": "ui_gauge",
+        "z": "7eac7a62884c6ebc",
+        "name": "",
+        "group": "1bc35e474a97e7e4",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "londres - tempo atual",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 720,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "bafe5c458eb70074",
+        "type": "ui_gauge",
+        "z": "7eac7a62884c6ebc",
+        "name": "",
+        "group": "1bc35e474a97e7e4",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "londres - tempo minimo",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 730,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "79bbc39c8c890b9c",
+        "type": "ui_gauge",
+        "z": "7eac7a62884c6ebc",
+        "name": "",
+        "group": "1bc35e474a97e7e4",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "londres - tempo maximo",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 730,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "b5c9b6d8c8b3e86d",
+        "type": "ui_gauge",
+        "z": "7eac7a62884c6ebc",
+        "name": "",
+        "group": "83635f90efd35635",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "londres - valocidade do vento",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 750,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "a42efcbe6de8cb4a",
+        "type": "ui_gauge",
+        "z": "7eac7a62884c6ebc",
+        "name": "",
+        "group": "83635f90efd35635",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "londres - humidade",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 710,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "cb98ee7c180f3a62",
+        "type": "ui_gauge",
+        "z": "7eac7a62884c6ebc",
+        "name": "",
+        "group": "83635f90efd35635",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "londres - sencacao termica",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 740,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "7333dd2d94045dcd",
+        "type": "change",
+        "z": "7eac7a62884c6ebc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.temp",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 620,
+        "wires": [
+            [
+                "87a179b49cb4a7ce",
+                "c25d92e7a03ee021"
+            ]
+        ]
+    },
+    {
+        "id": "3b35263da4183d7e",
+        "type": "change",
+        "z": "7eac7a62884c6ebc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.temp_min",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 700,
+        "wires": [
+            [
+                "2a54ebe93e0f945b",
+                "bafe5c458eb70074"
+            ]
+        ]
+    },
+    {
+        "id": "78c7d38facc4e585",
+        "type": "change",
+        "z": "7eac7a62884c6ebc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.temp_max",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 780,
+        "wires": [
+            [
+                "54768e53c3b4ae33",
+                "79bbc39c8c890b9c"
+            ]
+        ]
+    },
+    {
+        "id": "14f18eb9f78ab996",
+        "type": "change",
+        "z": "7eac7a62884c6ebc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.wind.speed",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 860,
+        "wires": [
+            [
+                "3c072d82678eb708",
+                "b5c9b6d8c8b3e86d"
+            ]
+        ]
+    },
+    {
+        "id": "87265b8f2d7ea372",
+        "type": "change",
+        "z": "7eac7a62884c6ebc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.humidity",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 940,
+        "wires": [
+            [
+                "57687db3bb2c94a0",
+                "a42efcbe6de8cb4a"
+            ]
+        ]
+    },
+    {
+        "id": "fa9828e8b157290b",
+        "type": "change",
+        "z": "7eac7a62884c6ebc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.feels_like",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 1020,
+        "wires": [
+            [
+                "d81d9422efd434be",
+                "cb98ee7c180f3a62"
+            ]
+        ]
+    },
+    {
+        "id": "76cc29dc05233609",
+        "type": "ui_group",
+        "name": "tempo",
+        "tab": "15450cb5800921a9",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f483b048b6e9fd27",
+        "type": "ui_group",
+        "name": "Info geral",
+        "tab": "15450cb5800921a9",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1bc35e474a97e7e4",
+        "type": "ui_group",
+        "name": "tempo",
+        "tab": "1017d663373352b0",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "83635f90efd35635",
+        "type": "ui_group",
+        "name": "Info geral",
+        "tab": "1017d663373352b0",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "15450cb5800921a9",
+        "type": "ui_tab",
+        "name": "Paris",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "1017d663373352b0",
+        "type": "ui_tab",
+        "name": "Londres",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    }
+]

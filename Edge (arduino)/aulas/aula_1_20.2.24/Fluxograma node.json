@@ -1,0 +1,757 @@
+[
+    {
+        "id": "5392a4869fb3e20c",
+        "type": "tab",
+        "label": "FIAP",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8359dafe74b0b8b5",
+        "type": "inject",
+        "z": "5392a4869fb3e20c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "vai tu!!!",
+        "payloadType": "str",
+        "x": 70,
+        "y": 100,
+        "wires": [
+            [
+                "d904d6d91ca2e944"
+            ]
+        ]
+    },
+    {
+        "id": "0bdc44832e399db3",
+        "type": "debug",
+        "z": "5392a4869fb3e20c",
+        "name": "temp",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "d904d6d91ca2e944",
+        "type": "http request",
+        "z": "5392a4869fb3e20c",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.openweathermap.org/data/2.5/weather?lat=48.8534&lon=2.3488&appid=a669c7581a465a7a7c6ca5cea61e378f&units=metric",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 190,
+        "y": 160,
+        "wires": [
+            [
+                "b27fa78444f6729b"
+            ]
+        ]
+    },
+    {
+        "id": "b27fa78444f6729b",
+        "type": "json",
+        "z": "5392a4869fb3e20c",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 350,
+        "y": 220,
+        "wires": [
+            [
+                "03cadcbe5bcae01c",
+                "369381b99be9fb1f"
+            ]
+        ]
+    },
+    {
+        "id": "03cadcbe5bcae01c",
+        "type": "change",
+        "z": "5392a4869fb3e20c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.temp_max",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 280,
+        "wires": [
+            [
+                "0bdc44832e399db3"
+            ]
+        ]
+    },
+    {
+        "id": "369381b99be9fb1f",
+        "type": "change",
+        "z": "5392a4869fb3e20c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.temp_min",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 160,
+        "wires": [
+            [
+                "e0da31fd712532c0"
+            ]
+        ]
+    },
+    {
+        "id": "e0da31fd712532c0",
+        "type": "debug",
+        "z": "5392a4869fb3e20c",
+        "name": "nome",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "033ce9ecc6a038f9",
+        "type": "ui_gauge",
+        "z": "5392a4869fb3e20c",
+        "name": "",
+        "group": "",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Palmas - Tempo maximo",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 710,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "48dce62cda510527",
+        "type": "ui_gauge",
+        "z": "5392a4869fb3e20c",
+        "name": "",
+        "group": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Palmas - Tempo minimo",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 710,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "df78d7519b295a02",
+        "type": "debug",
+        "z": "5392a4869fb3e20c",
+        "name": "debug 13",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "38352d03eee1bb0c",
+        "type": "debug",
+        "z": "5392a4869fb3e20c",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "3dc6444966695385",
+        "type": "debug",
+        "z": "5392a4869fb3e20c",
+        "name": "debug 15",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "c8e1348ecde0e2c4",
+        "type": "debug",
+        "z": "5392a4869fb3e20c",
+        "name": "debug 16",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "f96c4b4cc53e02c6",
+        "type": "debug",
+        "z": "5392a4869fb3e20c",
+        "name": "debug 17",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "2f36594fa569ab38",
+        "type": "debug",
+        "z": "5392a4869fb3e20c",
+        "name": "debug 18",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "9a070b9513008d9d",
+        "type": "http request",
+        "z": "5392a4869fb3e20c",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.openweathermap.org/data/2.5/weather?lat=48.8534&lon=2.3488&appid=a669c7581a465a7a7c6ca5cea61e378f&units=metric",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 190,
+        "y": 480,
+        "wires": [
+            [
+                "c5502d3afee6ce94"
+            ]
+        ]
+    },
+    {
+        "id": "c5502d3afee6ce94",
+        "type": "json",
+        "z": "5392a4869fb3e20c",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 290,
+        "y": 560,
+        "wires": [
+            [
+                "65103a7403e33ae4",
+                "8c823b08eaea0bf3",
+                "65fa2008376d4f03",
+                "4ae247d1cb38ce63",
+                "d7835ed9b1e820c4",
+                "a52b476422652798"
+            ]
+        ]
+    },
+    {
+        "id": "7e725f30ba2dd413",
+        "type": "ui_gauge",
+        "z": "5392a4869fb3e20c",
+        "name": "",
+        "group": "2b4f628704054f5e",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Palmas -  tempo atual",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 680,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "c2f31b0abc065faa",
+        "type": "ui_gauge",
+        "z": "5392a4869fb3e20c",
+        "name": "",
+        "group": "2b4f628704054f5e",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Palmas -  tempo minimo",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 690,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "c6afc24fde137680",
+        "type": "ui_gauge",
+        "z": "5392a4869fb3e20c",
+        "name": "",
+        "group": "2b4f628704054f5e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Palmas - tempo maximo",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 690,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "5a5f5225c0968553",
+        "type": "ui_gauge",
+        "z": "5392a4869fb3e20c",
+        "name": "",
+        "group": "5f27ff371e03b7a8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Palmas - valocidade do vento",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 710,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "a0e0b8272ef31ad0",
+        "type": "ui_gauge",
+        "z": "5392a4869fb3e20c",
+        "name": "",
+        "group": "5f27ff371e03b7a8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Palmas - humidade",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 670,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "2986b03adf1fa260",
+        "type": "ui_gauge",
+        "z": "5392a4869fb3e20c",
+        "name": "",
+        "group": "5f27ff371e03b7a8",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Palmas - sencacao termica",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 700,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "65103a7403e33ae4",
+        "type": "change",
+        "z": "5392a4869fb3e20c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.temp",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 400,
+        "wires": [
+            [
+                "df78d7519b295a02",
+                "7e725f30ba2dd413"
+            ]
+        ]
+    },
+    {
+        "id": "8c823b08eaea0bf3",
+        "type": "change",
+        "z": "5392a4869fb3e20c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.temp_min",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 480,
+        "wires": [
+            [
+                "38352d03eee1bb0c",
+                "c2f31b0abc065faa"
+            ]
+        ]
+    },
+    {
+        "id": "65fa2008376d4f03",
+        "type": "change",
+        "z": "5392a4869fb3e20c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.temp_max",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 560,
+        "wires": [
+            [
+                "3dc6444966695385",
+                "c6afc24fde137680"
+            ]
+        ]
+    },
+    {
+        "id": "4ae247d1cb38ce63",
+        "type": "change",
+        "z": "5392a4869fb3e20c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.wind.speed",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 640,
+        "wires": [
+            [
+                "c8e1348ecde0e2c4",
+                "5a5f5225c0968553"
+            ]
+        ]
+    },
+    {
+        "id": "d7835ed9b1e820c4",
+        "type": "change",
+        "z": "5392a4869fb3e20c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.humidity",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 720,
+        "wires": [
+            [
+                "f96c4b4cc53e02c6",
+                "a0e0b8272ef31ad0"
+            ]
+        ]
+    },
+    {
+        "id": "a52b476422652798",
+        "type": "change",
+        "z": "5392a4869fb3e20c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.main.feels_like",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 800,
+        "wires": [
+            [
+                "2f36594fa569ab38",
+                "2986b03adf1fa260"
+            ]
+        ]
+    },
+    {
+        "id": "b9be32bbd14ac1d0",
+        "type": "inject",
+        "z": "5392a4869fb3e20c",
+        "name": "Palmas",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 70,
+        "y": 420,
+        "wires": [
+            [
+                "9a070b9513008d9d"
+            ]
+        ]
+    },
+    {
+        "id": "2b4f628704054f5e",
+        "type": "ui_group",
+        "name": "tempo",
+        "tab": "df9aa7e2d03e366d",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5f27ff371e03b7a8",
+        "type": "ui_group",
+        "name": "Info geral",
+        "tab": "df9aa7e2d03e366d",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "df9aa7e2d03e366d",
+        "type": "ui_tab",
+        "name": "Palmas",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    }
+]

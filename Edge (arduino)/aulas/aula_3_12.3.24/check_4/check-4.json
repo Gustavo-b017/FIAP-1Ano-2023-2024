@@ -1,0 +1,297 @@
+[
+    {
+        "id": "c0e63aa2ac113306",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6f693b40edb2d8cc",
+        "type": "serial in",
+        "z": "c0e63aa2ac113306",
+        "name": "Arduino",
+        "serial": "7cddab76b63d1d04",
+        "x": 70,
+        "y": 180,
+        "wires": [
+            [
+                "02df648e0d0b6cbb"
+            ]
+        ]
+    },
+    {
+        "id": "02df648e0d0b6cbb",
+        "type": "json",
+        "z": "c0e63aa2ac113306",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 230,
+        "y": 180,
+        "wires": [
+            [
+                "df51338765eece0f",
+                "0be00cdcb4cc516c",
+                "f225ce543fc19f41"
+            ]
+        ]
+    },
+    {
+        "id": "df51338765eece0f",
+        "type": "change",
+        "z": "c0e63aa2ac113306",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.distance_cm",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 240,
+        "wires": [
+            [
+                "cac0e42260b83ec8",
+                "f13e0d7b6d819ca7"
+            ]
+        ]
+    },
+    {
+        "id": "0be00cdcb4cc516c",
+        "type": "change",
+        "z": "c0e63aa2ac113306",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.Luminosidade",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 120,
+        "wires": [
+            [
+                "ed4945d42792bd2e",
+                "7e079117b121c5e2"
+            ]
+        ]
+    },
+    {
+        "id": "f225ce543fc19f41",
+        "type": "change",
+        "z": "c0e63aa2ac113306",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.Temperatura",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 180,
+        "wires": [
+            [
+                "b6681a5388d24199",
+                "b7d326aa7e99c4af"
+            ]
+        ]
+    },
+    {
+        "id": "7e079117b121c5e2",
+        "type": "ui_gauge",
+        "z": "c0e63aa2ac113306",
+        "name": "",
+        "group": "38b88aeacababf03",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Luz",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 690,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "ed4945d42792bd2e",
+        "type": "debug",
+        "z": "c0e63aa2ac113306",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "b6681a5388d24199",
+        "type": "debug",
+        "z": "c0e63aa2ac113306",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "cac0e42260b83ec8",
+        "type": "debug",
+        "z": "c0e63aa2ac113306",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "b7d326aa7e99c4af",
+        "type": "ui_gauge",
+        "z": "c0e63aa2ac113306",
+        "name": "",
+        "group": "38b88aeacababf03",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatura",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 670,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "f13e0d7b6d819ca7",
+        "type": "ui_gauge",
+        "z": "c0e63aa2ac113306",
+        "name": "",
+        "group": "38b88aeacababf03",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Distancia",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 660,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "7cddab76b63d1d04",
+        "type": "serial-port",
+        "name": "",
+        "serialport": "COM5",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "38b88aeacababf03",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "b267fd2bfa90c42c",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b267fd2bfa90c42c",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]

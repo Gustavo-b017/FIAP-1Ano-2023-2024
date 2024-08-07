@@ -1,0 +1,36 @@
+3. Crie um programa para calcular a soma (função_soma) e a média (função_media) usando duas funções.
+
+4. Crie um programa para retornar o valor mínimo, outra para retornar o valor máximo e outra para retornar a diferença entre o máximo e mínimo
+
+lista = [10, 20, 30, 40, 50]
+
+5. Crie um programa que solicita o salário de um funcionário. Após isso, crie uma segunda função para calcular o desconto do funcionário. Posteriormente, crie uma terceira função para retornar o salário que o funcionário deverá receber.
+
+Faixas salariais e seus respectivos descontos:
+
+até 2000 reais: 10% de desconto
+Acima de 2000 até 4800 reais: 15% de desconto
+Acima de 4800 até 6000 reais: 20% de desconto
+Acima 6000 reais: 30% de desconto
+
+6. Crie um programa para calcular área de um círculo. Uma função para calcular a área e outra para classifiar a área.
+
+area > 100 - grande círculo
+area > 50 - médio círculo
+else - pequeno círculo
+
+7. Crie uma função para multiplicar os valores de duas listas. A primeira função faz a multiplicação e a segunda pegará a primeira e utilizará um append produtos = [] para multiplicar os respectivos índices das duas listas.
+
+lista 1 = [1, 2, 3, 4]
+lista 2 = [5, 6, 7, 8]
+
+
+
+
+
+
+
+
+
+
+

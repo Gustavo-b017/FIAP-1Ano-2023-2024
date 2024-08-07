@@ -1,0 +1,9 @@
+Exercícios
+
+1. Utilizando o dataframe sobre falhas em máquinas, crie um programa para retornar a média as colunas com valores númericos e não numéricos fazer a contagem das informações que se repetem.
+
+2. Utilizando o mesmo dataframe, crie um programa para calcular a média, soma, min, max e mediana e retornar estas informações em um único dataframe.
+
+3. Crie um programa para retornar os dados a qual o torque tenha valores maiores do que 50.
+
+4. Crie uma função para retornar apenas as máquinas do tipo m com todas as falhas, menos o estado sem falha (No Failure).

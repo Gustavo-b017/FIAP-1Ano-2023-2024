@@ -1,0 +1,33 @@
+$padding-div: 12px 8px
+$black: #000
+$gray: #7c7c7c
+$primary-font: Helvetica sans-serif
+$primary-color: #dd2880
+    
+    
+div
+    width: 50%
+    margin: 0 auto
+    text-align: center
+    border-radius: 10px
+    padding: $padding-div
+    background: $black
+    border: 1px solid black
+    font-family: $primary-font
+    transition: .8s 
+
+    p 
+        color: $primary-color
+        font-size: 1.3rem
+        
+
+    &:hover
+        background: transparent
+        transition: .8s 
+
+        p
+            color: $black
+            
+p 
+    color: $gray
+    text-align: center

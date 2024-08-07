@@ -1,0 +1,22 @@
+body {
+  margin: 10px 5px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.container {
+  width: 80%;
+  height: 100vh;
+  background-color: #e7e7e7;
+  background-color: #e7e;
+}
+.container .box {
+  background-color: #d43aff;
+  width: 300px;
+  height: 200px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: purple;
+}/*# sourceMappingURL=style.css.map */

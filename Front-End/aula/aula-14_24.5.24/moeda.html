@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        div {
+            height: 100vh;
+            position: relative;
+        }
+
+        div .roda {
+            background-image: url('./img/01.png') ;
+            width: 42px;
+            height: 44px;
+            
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            animation-name: moeda;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes moeda {
+            0% {
+                background-image: url('./img/01.png');
+                width: 42px;
+                height: 44px;
+                position: absolute;
+            }
+
+            25% {
+                background-image: url('./img/02.png');
+                width: 42px;
+                height: 24px;
+                position: absolute;
+            }
+            50% {
+                background-image: url('./img/03.png');
+                width: 42px;
+                height: 44px;
+                position: absolute;
+            }
+            75% {
+                background-image: url('./img/02.png');
+                width: 42px;
+                height: 24px;
+                position: absolute;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="roda"></div>
+    </div>
+</body>
+</html>

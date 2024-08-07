@@ -1,0 +1,22 @@
+@use 'mixins';
+@use './variables';
+
+body {
+    @include mixins.zero-config(10px 5px, 10px);
+    border: 1px solid black;
+}
+
+.container {
+    @include mixins.div-size(90%, 100vh );
+    @include mixins.div-style(#e7e7e7);
+    // @include mixins.flex-config(row, center , center );
+    background-color: #e7e;
+    margin: 0 auto;
+
+    .box{
+        @include mixins.div-style( );
+        @include mixins.div-size(300px, 200px );
+        @include mixins.relative-center();
+        background-color: red;
+    }
+}

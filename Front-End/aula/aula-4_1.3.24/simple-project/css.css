@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin:0;
+    padding:0;
+    text-decoration:none;
+    list-style:none;
+    box-sizing:border-box;
+    /* border: 1px solid red; */
+}
+
+body {
+    background-color: #1e2235;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+}
+
+form {
+    background-color: blueviolet;
+}
+
+header{
+    width:90%; /*tamanho do header*/
+    margin:0 auto; /* centralizar o header */
+    padding:3rem 0; /* o padding afeta na largura*/
+    box-sizing:border-box;
+}
+nav{
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 auto;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+}
+nav img{
+  width: 50px;
+}
+
+nav ul {
+    height: 40px;
+    display: flex;
+    justify-content: end;
+    font-size: 18px;
+    font-weight: 300;
+    align-items: center;
+    text-align: center;
+}
+
+nav ul li a {
+    font-size: 18px;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+
+}
+
+.line{
+    /* dotted preeenche com pontos */
+    border-left:1px solid #fff;
+}
+.btn-outline{
+    text-decoration:none; /* tirar o fomato de link */
+    color: white;
+    border:1px solid white;
+    border-radius:5px;
+    padding:10px 15px;
+}
+.btn{
+    text-decoration:none;
+    color:white;
+    border:1px solid #8b5cf6;
+    background-color: #8b5cf6;
+    border-radius:5px;
+    padding:10px 15px;
+}
+
+.banner-header{
+    height: 100%;
+    padding-top: 5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.banner-header .left{
+    height: 100%;
+    width: 50%;
+    flex-wrap: wrap;
+}
+
+div h2{
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color:#8b5cf6;
+    letter-spacing:2px;
+}
+
+div h1 {
+    font-size:3rem;
+}
+
+div p {
+    margin: 20px 0 60px 0;
+    font-weight:300;
+    line-height:2rem;
+}
+
+div a{
+    display: flex;
+    width: 200px;
+    align-items: center;
+}
+div .mini-message{
+    font-size:0.9rem;
+}

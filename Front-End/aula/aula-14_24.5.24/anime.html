@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box, .box-circle {
+            width: 60px;
+            height: 60px;
+            margin: 10px;
+            background-color: tomato;
+        }
+
+        .box-circle {
+            position: absolute;
+        }
+
+        input {
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <p class="text">ola mundo</p>
+
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <p class="bateria"> {'charged': '0%', 'cycles':120} </p>
+
+    <div class="box-circle"></div>
+
+    <input type="text" value="0" />
+
+    <!-- lincando o anime.js -->
+    <script src="./anime.min.js"></script>
+
+    <!-- script das animacoes -->
+    <script>
+        anime({
+            targets: '.text',
+            translateX: 250,
+        })
+       
+        let boxElements = document.querySelectorAll('.box')
+
+        anime({
+            targets: boxElements,
+            translateX: 270,
+            loop: true,
+        })
+
+        let logBateria = document.querySelector('.bateria')
+
+        let bateria = {
+            charged: '0%',
+            cycles: 120
+        }
+
+        anime({
+            targets: bateria,
+            charged: '100%',
+            cycles: 200,
+            round: 1 ,
+            duration: 2000,
+            loop: true,
+            easing: 'linear',
+            update: function() {
+                logBateria.innerHTML = JSON.stringify(bateria)
+            }
+        })
+
+        anime({
+            targets: '.box-circle',
+            left: '240px',
+            backgroundColor: '#F00',
+            loop: true,
+            borderRadius: ['0%', '50%'],
+            easing: 'easeInOutQuad'
+        })
+
+        anime({
+            targets: 'input',
+            value: [0, 100],
+            round: 1,
+            duration: 3000,
+            loop: true,
+            easing: 'easeInOutExpo'
+        })
+    </script>
+</body>
+</html>

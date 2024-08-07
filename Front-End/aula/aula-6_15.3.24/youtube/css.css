@@ -1,0 +1,45 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+    border: 1px solid red;
+}
+
+body {
+    color: white;
+    background-color: #333;
+}
+.video-box {
+    width: 300px;
+}
+
+.video-box .thumbinail, .video-box .thumbinail img {
+    width: 100%;
+}
+
+.video-box .thumbinail img {
+    border-radius: 10px;
+    /* melhora a imagem redefinida, adpatando a quaidade e tamanho da img */
+    object-fit: cover;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    margin-top: 10px;
+    column-gap: 5px;
+}
+
+.content .chanel-img, .content .chanel-img img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.content .text h2 {
+    font-size: 1rem;
+}
+
+.content .text p {
+    font-size: 0.85rem;
+}

@@ -1,0 +1,20 @@
+/* TAG */
+article {
+    background-color: rgb(67, 143, 16);
+}
+
+.fonte {
+    font-family: 'Courier New', Courier, monospace; 
+    font-size: 30px
+    
+}
+
+.corfundo{
+    background-color: blue;
+    font-size: 50px
+}
+
+/* id so pode existir 1*/
+#id2{
+    background-color: aqua;
+}
